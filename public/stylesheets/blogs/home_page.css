@@ -1,0 +1,67 @@
+.carousel {
+	margin: 25px auto;
+	padding: 0px;
+	width: 100%;
+}
+
+.parent-container {
+	display: flex;
+}
+
+.left-container,
+.middle-container,
+.right-container {
+	padding: 15px;
+	justify-content: center;
+}
+
+.left-container {
+	width: 20%;
+}
+
+.middle-container {
+	width: 58%;
+}
+
+.right-container {
+	width: 22%;
+}
+
+
+.right-card{
+	width:100%;
+}
+
+.middle-card,
+.left-card {
+	width: 100%;
+	padding: 10px;
+}
+.left-card-title,
+.left-card-head {
+	justify-content: center;
+	display: flex;
+}
+.left-card-minor {
+	display: flex;
+}
+h4 a:hover {
+	text-decoration: none;
+}
+.blogTitle{
+	color:#00A0DC;
+}
+.blogTitle:hover{
+	color:#0077B5;
+}
+.btn{
+	background-color:#00659B;
+	color:#FFF;
+}
+.card{
+	box-shadow: 7px 10px 12px -5px rgb(0 0 0 / 56%);
+	border-radius:10px;
+}
+.btnCheckOut{
+	margin-top: 15px;
+}

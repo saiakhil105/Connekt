@@ -1,0 +1,59 @@
+<%- include("partials/header") %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/profile/profile_page.css" />
+<script src="/javascripts/profilePageScripts.js"></script>
+<div class="container-fluid">
+	<div class="parent">
+		<div class="personal_details">
+			<div class="card border-secondary p-2">
+				<div class="details_text">
+					<p class="name"><%= currentUser.username %></p>
+					<hr />
+					<p class="details"><%= currentUser.rollno %></p>
+					<p class="details"><%= currentUser.branch %></p>
+					<p class="details"><%= currentUser.year %> Year</p>
+				</div>
+			</div>
+		</div>
+		<div class="posts">
+			<div class="buttons p-2 mb-3">
+				<button class="btn blogButton">BLOGS</button>
+				<button class="btn academicsButton">ACADEMICS</button>
+			</div>
+			<div class="blogs">
+				<% blogs.forEach(function(blog,i){ %>
+				<div class="card middle-card mb-3 p-3">
+					<h4>
+						<a href="/blogs/<%= blog._id %>"><%= blog.title %></a>
+					</h4>
+					<% if(blog.img.length>0){ %>
+					<img
+						class="mb-3"
+						src="<%= blog.img[0].url %>"
+						class="d-block w-100"
+						alt="..."
+					/>
+					<% } %>
+					<p>
+						<% var maxLength = 860; var description=blog.desc; var newStr =
+						description.substring(0, maxLength);%> <% if(description.length>maxLength) {
+						%> <%=newStr%>....<a href="/blogs/<%= blog._id %>">Read more</a>
+						<% }else{ %> <%= description %> <% } %>
+					</p>
+				</div>
+				<% }); %>
+			</div>
+
+			<div class="academics">
+				<div>
+					<% questions.forEach(function(question){%>
+					<div class="card p-3 m-3">
+						<a class="h5"><%= question.text %></a>
+					</div>
+					<% }) %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include("partials/footer") %>
